@@ -161,5 +161,7 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 	if not tile_data:
 		# Outside level.
 		return false
-
+	if tile_data.get_custom_data("isGoal"):
+		# TODO Something Reasonable
+		return 42
 	return tile_data.get_collision_polygons_count(0) < 1
