@@ -122,7 +122,7 @@ func _physics_process(_p_delta: float) -> void:
 		if input_direction != Vector2(0,0):
 			_last_input_direction = input_direction
 		facing = facingFromVector(input_direction)
-		var vision_poly = get_node("Polygon2D")
+		#var vision_poly = get_node("Polygon2D")
 		rotation_degrees = (facingToRotDeg(facing))
 		var goalLabel = get_node("goalLabel")
 		#goalLabel.rotation_degrees = -(facingToRotDeg(facing))

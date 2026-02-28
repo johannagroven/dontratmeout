@@ -1109,9 +1109,9 @@ position = Vector2(20, 245)
 script = ExtResource("4_1bvp3")
 tile_map = NodePath("../tile_map")
 
-[node name="Timer" type="Timer" parent="." unique_id=881414266]
 
-[node name="goalLabel" type="Label" parent="." unique_id=489554266]
+[node name="goalLabel" type="Label" parent="."]
+
 offset_left = 48.0
 offset_top = 50.0
 offset_right = 353.0
