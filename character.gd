@@ -189,4 +189,6 @@ func _input(event):
 			var next_map_position: Vector2i = map_position + map_direction
 			if _is_walkable(next_map_position):
 				tile_map.set_cell(0,next_map_position,1,Vector2i(2,2))
-			
+				tile_map.populateAstarGrid()
+				get_node("/root/main/mouse").setPath()
+				
