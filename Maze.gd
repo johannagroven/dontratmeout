@@ -63,12 +63,18 @@ func getLoc(index):
 	
 func addSprites():
 	for i in range(board.size()):
-		var location = getLoc(i) * tileSize
+		var indexLoc = getLoc(i)
+		var location = indexLoc * tileSize
 		var sprite
 		match board[i]:
 			Tile.START:
 				sprite = Sprite2D.new()
 				sprite.texture = tileText
+				var playerScn = load("res://player.gd")
+				var player = playerScn.new()
+				player.location = indexLoc
+				add_child(player)
+
 			Tile.GOAL:
 				sprite = Sprite2D.new()
 				sprite.texture = tileText
