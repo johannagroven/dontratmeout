@@ -1,17 +1,18 @@
-[gd_scene format=3 uid="uid://e3ynlypijkbo"]
+[gd_scene load_steps=23 format=3 uid="uid://e3ynlypijkbo"]
 
-[ext_resource type="Texture2D" uid="uid://cmqeqh5q6wjho" path="res://tiles.png" id="1_1mjvg"]
+[ext_resource type="Texture2D" uid="uid://cxlbr22q861mb" path="res://tiles.png" id="1_1mjvg"]
 [ext_resource type="PackedScene" uid="uid://dq6m4s6rb3x80" path="res://character.tscn" id="2_3m31f"]
-[ext_resource type="Texture2D" uid="uid://3rsis153tqt4" path="res://assets/wallatlas.png" id="2_5vw27"]
+[ext_resource type="Texture2D" uid="uid://8ahxjhd3uowy" path="res://assets/wallatlas.png" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://edo6bdmfqkxg" path="res://mouse.tscn" id="3_h2yge"]
-[ext_resource type="Texture2D" uid="uid://ctd1quis0yv5j" path="res://assets/mazetile.png" id="3_kek77"]
+[ext_resource type="Texture2D" uid="uid://b64r07q4msqnj" path="res://assets/mazetile.png" id="3_kek77"]
 [ext_resource type="Script" uid="uid://bw8cioamlxp3g" path="res://mob.gd" id="4_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://dx8pjo8ydf10c" path="res://assets/start.png" id="4_4c57u"]
-[ext_resource type="Texture2D" uid="uid://umamuxyst7ph" path="res://assets/goal.png" id="5_efxa6"]
-[ext_resource type="Texture2D" uid="uid://bl8a8fwtwq5bp" path="res://assets/walls/walldestroyed.png" id="6_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dxj4nxhxgos2l" path="res://assets/start.png" id="4_4c57u"]
+[ext_resource type="Texture2D" uid="uid://c1dgsb4npxgog" path="res://assets/goal.png" id="5_efxa6"]
+[ext_resource type="Texture2D" uid="uid://dkfkymyn00s7e" path="res://assets/walls/walldestroyed.png" id="6_4c57u"]
 [ext_resource type="Script" uid="uid://cbjaqq57fql7a" path="res://tile_map.gd" id="6_kek77"]
-[ext_resource type="Texture2D" uid="uid://dxqslsbkegxn4" path="res://assets/undestructablewallatlas.png" id="7_dg77c"]
+[ext_resource type="Texture2D" uid="uid://cq0j5kaa3jor4" path="res://assets/undestructablewallatlas.png" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://3y8usxyunu7" path="res://timed_ability.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://clisjik3djfm4" path="res://scientist.tscn" id="12_dg77c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4vbl"]
 resource_name = "atlas"
@@ -1070,7 +1071,7 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.220399, 0.338906, 0.77114, 1)
 terrain_set_0/terrain_1/name = "Terrain 1"
-terrain_set_0/terrain_1/color = Color(0.21901917, 0.22050682, 0.21369243, 1)
+terrain_set_0/terrain_1/color = Color(0.219019, 0.220507, 0.213692, 1)
 custom_data_layer_0/name = "is_walkable"
 custom_data_layer_0/type = 1
 custom_data_layer_1/name = "isGoal"
@@ -1089,37 +1090,39 @@ sources/6 = SubResource("TileSetAtlasSource_2cqfq")
 font_size = 80
 font_color = Color(0.197751, 0.431071, 0.102956, 1)
 
-[node name="main" type="Node2D" unique_id=307916816]
+[node name="main" type="Node2D"]
 
-[node name="tile_map" type="TileMap" parent="." unique_id=1781745882]
+[node name="tile_map" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_27pgi")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 0, 131072, 2, 0, 196608, 2, 0, 262144, 2, 0, 327680, 2, 0, 393216, 917505, 1, 458752, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 65542, 589825, 1, 131078, 720897, 1, 196614, 720897, 1, 262150, 262145, 0, 327686, 720897, 1, 393222, 524289, 0, 458758, 65537, 1, 524294, 196609, 1, 589830, 2, 0, 589829, 2, 0, 589828, 2, 0, 589827, 2, 0, 589826, 2, 0, 589825, 851969, 1, 589824, 3, 0, 524288, 2, 0, 524289, 655361, 1, 524290, 786433, 1, 524291, 786433, 1, 524292, 786433, 1, 524293, 655361, 0, 458757, 1, 1, 393221, 393217, 1, 327685, 2, 0, 262149, 917505, 1, 196613, 2, 0, 131077, 2, 0, 65541, 786433, 1, 65540, 786433, 1, 131076, 2, 0, 196612, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 458755, 2, 0, 393219, 851969, 1, 327683, 720897, 1, 262147, 720897, 1, 196611, 65537, 2, 131075, 2, 0, 65539, 786433, 1, 65538, 786433, 1, 131074, 2, 0, 196610, 2, 0, 262146, 2, 0, 327682, 2, 0, 458754, 2, 0, 393217, 1, 2, 327681, 2, 0, 262145, 851969, 1, 196609, 720897, 1, 131073, 720897, 1, 65537, 655361, 1, 524295, 2, 0, 524296, 851969, 1, 524297, 2, 0, 524298, 720902, 1, 524299, 2, 0, 458759, 2, 0, 458760, 720897, 1, 458761, 2, 0, 458762, 720902, 1, 458763, 2, 0, 393227, 2, 0, 327691, 2, 0, 327690, 2, 0, 393226, 65542, 2, 393225, 2, 0, 393224, 720897, 1, 327688, 720897, 1, 327687, 2, 0, 393223, 2, 0, 196615, 2, 0, 131079, 2, 0, 65544, 917505, 1, 65545, 786433, 1, 196617, 327681, 1, 262153, 393217, 0, 327689, 2, 0, 196618, 2, 0, 262154, 786433, 1, 262152, 458753, 0, 196616, 393217, 1, 262151, 2, 0, 131082, 851969, 1, 262155, 1, 2, 196619, 2, 0, 196620, 720902, 1, 131084, 720902, 1, 65548, 720902, 1, 65547, 2, 0, 65546, 589825, 1, 65543, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 131083, 2, 0, 12, 720902, 1, 458764, 720902, 1, 393228, 720902, 1, 327692, 720902, 1, 262156, 720902, 1, 524300, 720902, 1, 589836, 720902, 1, 589835, 4, 0, 589834, 720902, 1, 655370, 131078, 0, 655369, 786438, 1, 589833, 2, 0, 589832, 2, 0, 589831, 2, 0, 65535, 720902, 1, 131071, 720902, 1, -65535, 786438, 1, -65534, 786438, 1, -65529, 786438, 1, -65528, 786438, 1, -65527, 786438, 1, -65526, 786438, 1, -65525, 786438, 1, -65530, 786438, 1, -65531, 786438, 1, -65532, 786438, 1, -65533, 786438, 1, -65536, 786438, 1, -1, 655366, 1, 196607, 720902, 1, 262143, 720902, 1, 327679, 720902, 1, 720895, 524294, 1, 655360, 786438, 1, 655361, 786438, 1, 655362, 786438, 1, 655363, 786438, 1, 655364, 786438, 1, 655365, 786438, 1, 655366, 786438, 1, 655367, 786438, 1, 655368, 786438, 1, 655371, 786438, 1, 393215, 720902, 1, 458751, 720902, 1, 524287, 720902, 1, 589823, 720902, 1, 655359, 720902, 1, -65524, 589830, 1, 655372, 458758, 1, 458753, 2, 0, 393218, 2, 0, 262148, 2, 0, 131080, 2, 0, 131081, 2, 0)
 script = ExtResource("6_kek77")
 
-[node name="character" parent="." unique_id=1459085616 node_paths=PackedStringArray("tile_map") instance=ExtResource("2_3m31f")]
+[node name="character" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("2_3m31f")]
 position = Vector2(14, 306)
 collision_layer = 2
 collision_mask = 2
 tile_map = NodePath("../tile_map")
 tiles_per_second = 5.0
 
-[node name="mouse" parent="." unique_id=1105024048 node_paths=PackedStringArray("tile_map") instance=ExtResource("3_h2yge")]
+[node name="mouse" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("3_h2yge")]
 position = Vector2(20, 245)
 script = ExtResource("4_1bvp3")
 tile_map = NodePath("../tile_map")
 
-
 [node name="goalLabel" type="Label" parent="."]
-
 offset_left = 48.0
 offset_top = 50.0
 offset_right = 353.0
 offset_bottom = 212.0
 label_settings = SubResource("LabelSettings_4c57u")
 
-[node name="WallBreak" parent="." unique_id=643888668 instance=ExtResource("11_efxa6")]
+[node name="WallBreak" parent="." instance=ExtResource("11_efxa6")]
 position = Vector2(88, 493)
 
-[node name="BuildWall" parent="." unique_id=917164524 instance=ExtResource("11_efxa6")]
+[node name="BuildWall" parent="." instance=ExtResource("11_efxa6")]
 position = Vector2(245, 495)
+
+[node name="PosStart" parent="." instance=ExtResource("12_dg77c")]
+position = Vector2(-100, 172)
+rotation = 1.5708

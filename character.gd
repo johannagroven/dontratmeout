@@ -157,6 +157,7 @@ func _process(_p_delta: float) -> void:
 	visuals.global_position = lerp(_previous_position, global_position, weight)
 	wallAbility.update()
 	buildAbility.update()
+	get_node("../PosStart").update()
 
 
 ## Convert analog input direction to grid direction.
