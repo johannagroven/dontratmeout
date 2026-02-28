@@ -104,7 +104,8 @@ func _physics_process(_p_delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_direction: Vector2 = get_movement()
-		_last_input_direction = input_direction
+		if input_direction != Vector2(0,0):
+			_last_input_direction = input_direction
 		facing = facingFromVector(input_direction)
 		var vision_poly = get_node("Polygon2D")
 		rotation_degrees = (facingToRotDeg(facing))
