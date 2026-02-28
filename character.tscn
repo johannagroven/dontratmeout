@@ -73,6 +73,7 @@ editor_draw_drag_margin = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visuals"]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_qi5as")
+autoplay = "default"
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ujape")
