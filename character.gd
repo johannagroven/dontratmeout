@@ -171,6 +171,7 @@ func set_state(s):
 			get_node(^"../goalLabel").text = "You\nWin!"
 		elif s == STATES.LOST:
 			get_node(^"../goalLabel").text = "You\nLost!"
+			get_node(^"../goalLabel").label_settings.font_color = Color(1,0,0,1)
 
 ## Can we enter a given tile coordinate?
 ## Our character has a collider and moves using the physics system so that it interacts properly
