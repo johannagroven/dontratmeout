@@ -193,6 +193,8 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 	return tile_data.get_collision_polygons_count(0) < 1
 
 func _input(event):
+	if state != STATES.PLAYING:
+		return
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_3: # Tear down wall
 			if wallAbility.use():
