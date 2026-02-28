@@ -9,10 +9,13 @@ const tileSize = Vector2i(32,32)
 enum Tile {WALL, FLOOR, MOUSE, PLAYER}
 
 func _ready():
+	initBoard()
+	addSprites()
+
+func initBoard():
 	for y in range(0,height):
 		for x in range(0,height):
 			board.append(Tile.FLOOR)
-	addSprites()
 			
 func getIndex(x, y):
 	return y * width + x
