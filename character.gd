@@ -1,6 +1,14 @@
 class_name PlayerCharacter2D extends CharacterBody2D
 ## Snaps to a tile map grid and moves according to player input.
 
+enum FACINGS {
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+}
+
+var facing = FACINGS.UP
 
 ## Set to the tile map you want to walk in.
 @export var tile_map: TileMap = null
@@ -58,6 +66,26 @@ func _ready() -> void:
 	_physics_velocity_fraction = Engine.physics_ticks_per_second / float(_physics_ticks_per_move)
 	print("_physics_velocity_fraction: ", _physics_velocity_fraction)
 
+func facingFromVector(v2):
+	if v2.x < 0:
+		return FACINGS.LEFT
+	elif v2.x > 0:
+		return FACINGS.RIGHT
+	elif v2.y > 0:
+		return FACINGS.DOWN
+	else:
+		return FACINGS.UP
+		
+func facingToRotDeg(f):
+	match f:
+		FACINGS.UP:
+			return 270
+		FACINGS.DOWN:
+			return 90
+		FACINGS.LEFT:
+			return 180
+		FACINGS.RIGHT:
+			return 0
 
 func _physics_process(_p_delta: float) -> void:
 	if not tile_map:
@@ -67,7 +95,9 @@ func _physics_process(_p_delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-
+		facing = facingFromVector(input_direction)
+		var vision_poly = get_node("Polygon2D")
+		rotation_degrees = (facingToRotDeg(facing))
 		# Convert global position into a tile coordinate.
 		# We don't assume we are already snapped to the tile grid.
 		var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
