@@ -71,6 +71,7 @@ drag_vertical_enabled = true
 editor_draw_drag_margin = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visuals"]
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_qi5as")
 
 [node name="shape" type="CollisionShape2D" parent="."]
