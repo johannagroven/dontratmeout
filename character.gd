@@ -199,4 +199,14 @@ func _input(event):
 			var next_map_position: Vector2i = map_position + map_direction
 			if not _is_walkable(next_map_position):
 				tile_map.set_cell(0,next_map_position,5,Vector2i(0,0))
-			
+		if event.keycode == KEY_4:
+			var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
+			var map_position: Vector2i = tile_map.local_to_map(position_relative_to_tile_map)
+
+			var map_direction: Vector2i = _input_direction_to_map_direction(_last_input_direction)
+			var next_map_position: Vector2i = map_position + map_direction
+			if _is_walkable(next_map_position):
+				tile_map.set_cell(0,next_map_position,1,Vector2i(2,2))
+				tile_map.populateAstarGrid()
+				get_node("/root/main/mouse").setPath()
+				

@@ -21,3 +21,4 @@ func populateAstarGrid():
 	
 func _ready() -> void:
 	populateAstarGrid()
+	

@@ -197,3 +197,8 @@ func follow_path():
 func get_movement():
 	#return dither()
 	return follow_path()
+	
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_4:
+			setPath()
