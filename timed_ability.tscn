@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://3y8usxyunu7"]
+
+[ext_resource type="Script" uid="uid://cvkn6o6oxb4lb" path="res://timed_ability.gd" id="1_0x5wn"]
+[ext_resource type="Texture2D" uid="uid://dqfnwgkcl5gs7" path="res://assets/cards/destroyWall.png" id="2_g5y4h"]
+
+[node name="TimedAbility" type="Node2D"]
+script = ExtResource("1_0x5wn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_g5y4h")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 0.0588235, 0.0431373, 1)
+polygon = PackedVector2Array(-63, -94, 58, -94, 58, 92, -60, 92)
