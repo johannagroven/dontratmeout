@@ -5,6 +5,8 @@ const width = 10
 var board = []
 var sprites = []
 const tileSize = Vector2i(32,32)
+var tileText = load("res://assets/mazetile.png")
+var wallText = load("res://assets/walls/wall0.png")
 
 enum Tile {WALL, FLOOR, MOUSE, PLAYER}
 
@@ -27,18 +29,19 @@ func getLoc(index):
 	
 func addSprites():
 	for i in range(board.size()):
+		var location = getLoc(i) * tileSize
+		var sprite
 		match board[i]:
 			Tile.WALL:
-				break
+				sprite = Sprite2D.new()
+				sprite.texture = wallText
 			Tile.FLOOR:
-				var sprite = Sprite2D.new()
-				sprite.texture = load("res://assets/mazetile.png")
-				var location = getLoc(i)*tileSize
-				print(i,location,board.size())
-				sprite.global_position = getLoc(i)*tileSize
-				add_child(sprite)
-				sprites.append(sprite)				
+				sprite = Sprite2D.new()
+				sprite.texture = tileText
 			Tile.MOUSE:
 				break
 			Tile.PLAYER:
 				break
+		sprite.global_position = location
+		add_child(sprite)
+		sprites.append(sprite)		
