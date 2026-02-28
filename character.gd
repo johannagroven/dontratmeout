@@ -163,5 +163,5 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		return false
 	if tile_data.get_custom_data("isGoal"):
 		# TODO Something Reasonable
-		return 42
+		get_node("goalLabel").text = "You\nWin!"
 	return tile_data.get_collision_polygons_count(0) < 1

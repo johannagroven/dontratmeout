@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq6m4s6rb3x80"]
+[gd_scene load_steps=12 format=3 uid="uid://dq6m4s6rb3x80"]
 
 [ext_resource type="Script" uid="uid://c3v634grxau4p" path="res://character.gd" id="1_5sc8v"]
 [ext_resource type="Texture2D" uid="uid://c6hnraa2v8rsc" path="res://assets/computer mouse-Sheet.png" id="2_pjt0s"]
@@ -56,6 +56,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujape"]
 size = Vector2(14, 14)
 
+[sub_resource type="LabelSettings" id="LabelSettings_pjt0s"]
+font_color = Color(0.109804, 0.784314, 0, 1)
+
 [node name="character" type="CharacterBody2D"]
 position = Vector2(0, -1)
 motion_mode = 1
@@ -78,5 +81,9 @@ autoplay = "default"
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ujape")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 31, -18, 31, 19)
+[node name="goalLabel" type="Label" parent="."]
+offset_left = -14.0
+offset_top = -26.0
+offset_right = 26.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_pjt0s")
