@@ -1,1 +1,1 @@
-extends "res://Tile.gd"
+extends Area2D

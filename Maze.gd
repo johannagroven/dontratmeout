@@ -13,7 +13,6 @@ const tileSize = Vector2i(32,32)
 
 # Also const, but because they're dynamically loaded they cannot be const
 var tileText = load("res://assets/mazetile.png")
-var wallText = load("res://assets/walls/wall0.png")
 
 var height = 10
 var width = 10
@@ -23,10 +22,10 @@ var sprites = []
 var startLoc = Vector2i(-1,-1)
 var goalLoc = Vector2i(-1,-1)
 
-func _ready():
+#func _ready():
 	#randomBoard()
-	boardFromFile("res://assets/boards/test.json")
-	addSprites()
+	#boardFromFile("res://assets/boards/test.json")
+	#addSprites()
 
 func randomBoard():
 	startLoc = Vector2i(width - 1, height - 1)
@@ -80,7 +79,7 @@ func addSprites():
 				sprite.texture = tileText
 			Tile.WALL:
 				sprite = Sprite2D.new()
-				sprite.texture = wallText
+				sprite.texture = chooseWallTexture()
 			Tile.FLOOR:
 				sprite = Sprite2D.new()
 				sprite.texture = tileText
@@ -91,3 +90,7 @@ func addSprites():
 		sprite.global_position = location
 		add_child(sprite)
 		sprites.append(sprite)		
+		
+func chooseWallTexture():
+	var wallText0 = load("res://assets/walls/wall0.png")
+	return wallText0
