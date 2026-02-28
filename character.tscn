@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq6m4s6rb3x80"]
+
+[ext_resource type="Script" uid="uid://c3v634grxau4p" path="res://character.gd" id="1_5sc8v"]
+[ext_resource type="Texture2D" uid="uid://xnkr6loem1cu" path="res://icon.svg" id="1_lahgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujape"]
+size = Vector2(14, 14)
+
+[node name="character" type="CharacterBody2D"]
+position = Vector2(0, -1)
+motion_mode = 1
+script = ExtResource("1_5sc8v")
+tiles_per_second = 10.0
+
+[node name="visuals" type="Node2D" parent="."]
+
+[node name="sprite" type="Sprite2D" parent="visuals"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_lahgk")
+
+[node name="camera" type="Camera2D" parent="visuals"]
+zoom = Vector2(4, 4)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ujape")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 31, -18, 31, 19)
