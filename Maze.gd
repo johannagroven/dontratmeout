@@ -3,8 +3,8 @@ extends Area2D
 enum Tile {
 	FLOOR = 0,
 	WALL = 1,
-	MOUSE = 8,
-	PLAYER = 9
+	MOUSE = 98,
+	PLAYER = 99
 }
 const tileSize = Vector2i(32,32)
 const height = 10
