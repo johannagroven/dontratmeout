@@ -18,6 +18,7 @@ texture = ExtResource("1_1mjvg")
 1:0/0/custom_data_0 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg77c"]
+resource_name = "Walls"
 texture = ExtResource("2_5vw27")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -575,21 +576,25 @@ texture_region_size = Vector2i(32, 32)
 5:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycdy4"]
+resource_name = "Floors"
 texture = ExtResource("3_kek77")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w48qg"]
+resource_name = "Start"
 texture = ExtResource("4_4c57u")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/custom_data_0 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vivmo"]
+resource_name = "Goal"
 texture = ExtResource("5_efxa6")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/custom_data_0 = true
+0:0/0/custom_data_1 = true
 
 [sub_resource type="TileSet" id="TileSet_27pgi"]
 tile_size = Vector2i(32, 32)
@@ -599,6 +604,8 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.22039863, 0.3389059, 0.77114046, 1)
 custom_data_layer_0/name = "is_walkable"
 custom_data_layer_0/type = 1
+custom_data_layer_1/name = "isGoal"
+custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_c4vbl")
 sources/1 = SubResource("TileSetAtlasSource_dg77c")
 sources/2 = SubResource("TileSetAtlasSource_ycdy4")
