@@ -37,5 +37,5 @@ func update():
 	timer = max(timer, 0)
 	
 	var percent = timer / maxCooldown
-	poly.scale = Vector2(percent, percent)	
+	poly.scale = Vector2(1, percent)	
 	
