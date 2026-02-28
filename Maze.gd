@@ -1,6 +1,8 @@
 extends Area2D
 
 enum Tile {
+	START = -2,
+	GOAL = -1,
 	FLOOR = 0,
 	WALL = 1,
 	MOUSE = 98,
