@@ -1,15 +1,23 @@
 extends Area2D
 
+enum Tile {
+	FLOOR = 0,
+	WALL = 1,
+	MOUSE = 8,
+	PLAYER = 9
+}
+const tileSize = Vector2i(32,32)
 const height = 10
 const width = 10
-var board = []
-var sprites = []
-const tileSize = Vector2i(32,32)
+
+# Also const, but because they're dynamically loaded they cannot be const
 var tileText = load("res://assets/mazetile.png")
 var wallText = load("res://assets/walls/wall0.png")
-var rng = RandomNumberGenerator.new()
 
-enum Tile {WALL, FLOOR, MOUSE, PLAYER}
+var rng = RandomNumberGenerator.new()
+var board = []
+var sprites = []
+
 
 func _ready():
 	initBoard()
