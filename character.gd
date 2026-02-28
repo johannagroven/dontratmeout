@@ -49,7 +49,7 @@ var _last_input_direction: Vector2 = Vector2.ZERO
 ## Without interpolation, any visuals attached to the character directly would appear to jitter when
 ## the framerate exceeds the physics tick rate.
 @onready var visuals: Node2D = $visuals
-
+var wallAbility
 
 func _init() -> void:
 	# Reset to correct motion mode. (in case script is applied without setting motion mode)
@@ -59,6 +59,7 @@ func _init() -> void:
 func _ready() -> void:
 	# Initialize interpolate-from position as starting position rather than zero.
 	_previous_position = global_position
+	wallAbility = get_node("../WallBreak")
 
 	# Convert desired movement speed into a discrete number of physics ticks per cell traveled.
 	# For example, if physics_ticks_per_second is 60 (default) and tiles_per_second is 6,
@@ -148,6 +149,7 @@ func _process(_p_delta: float) -> void:
 	# Refer to visuals property documentation for more details.
 	var weight: float = Engine.get_physics_interpolation_fraction()
 	visuals.global_position = lerp(_previous_position, global_position, weight)
+	wallAbility.update()
 
 
 ## Convert analog input direction to grid direction.
@@ -192,16 +194,17 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_3:
-			var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
-			var map_position: Vector2i = tile_map.local_to_map(position_relative_to_tile_map)
+		if event.keycode == KEY_3: # Tear down wall
+			if wallAbility.use():
+				var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
+				var map_position: Vector2i = tile_map.local_to_map(position_relative_to_tile_map)
 
-			var map_direction: Vector2i = _input_direction_to_map_direction(_last_input_direction)
-			var next_map_position: Vector2i = map_position + map_direction
-			if not _is_walkable(next_map_position):
-				tile_map.set_cell(0,next_map_position,5,Vector2i(0,0))
-				tile_map.populateAstarGrid()
-				get_node("/root/main/mouse").setPath()
+				var map_direction: Vector2i = _input_direction_to_map_direction(_last_input_direction)
+				var next_map_position: Vector2i = map_position + map_direction
+				if not _is_walkable(next_map_position):
+					tile_map.set_cell(0,next_map_position,5,Vector2i(0,0))
+					tile_map.populateAstarGrid()
+					get_node("/root/main/mouse").setPath()
 		if event.keycode == KEY_4:
 			var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
 			var map_position: Vector2i = tile_map.local_to_map(position_relative_to_tile_map)
