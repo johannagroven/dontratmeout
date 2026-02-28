@@ -178,7 +178,9 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		return false
 	if tile_data.get_custom_data("isGoal"):
 		# TODO Something Reasonable
-		get_node("goalLabel").text = "You\nWin!"
+		#get_node(^"../character/goalLabel").text = "You\nLost!"
+		var player = get_node(^"../character")
+		player.set_state(player.STATES.LOST)
 	return tile_data.get_collision_polygons_count(0) < 1
 
 func follow_path():

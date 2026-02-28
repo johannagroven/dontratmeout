@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq6m4s6rb3x80"]
 
 [ext_resource type="Script" uid="uid://c3v634grxau4p" path="res://character.gd" id="1_5sc8v"]
-[ext_resource type="Texture2D" uid="uid://ca6qxgjhqdmw5" path="res://assets/computer mouse-Sheet.png" id="2_pjt0s"]
+[ext_resource type="Texture2D" uid="uid://blce58ipxrrna" path="res://assets/computer mouse-Sheet.png" id="2_pjt0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa5vi"]
 atlas = ExtResource("2_pjt0s")
@@ -57,6 +57,7 @@ animations = [{
 size = Vector2(14, 14)
 
 [sub_resource type="LabelSettings" id="LabelSettings_pjt0s"]
+font_size = 50
 font_color = Color(0.109804, 0.784314, 0, 1)
 
 [node name="character" type="CharacterBody2D" unique_id=1886798678]
@@ -81,8 +82,9 @@ autoplay = "default"
 shape = SubResource("RectangleShape2D_ujape")
 
 [node name="goalLabel" type="Label" parent="." unique_id=1654164957]
-offset_left = -14.0
-offset_top = -26.0
-offset_right = 26.0
-offset_bottom = 23.0
+offset_left = -67.0
+offset_top = -49.0
+offset_right = 69.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 80
 label_settings = SubResource("LabelSettings_pjt0s")

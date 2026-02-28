@@ -8,8 +8,14 @@ enum FACINGS {
 	RIGHT
 }
 
-var facing = FACINGS.UP
+enum STATES {
+	PLAYING,
+	WON,
+	LOST
+}
 
+var facing = FACINGS.UP
+var state = STATES.PLAYING
 ## Set to the tile map you want to walk in.
 @export var tile_map: TileMap = null
 
@@ -94,6 +100,8 @@ func facingToRotDeg(f):
 
 func get_movement():
 	var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	if state != STATES.PLAYING:
+		return Vector2(0,0)
 	return input_direction
 
 func _physics_process(_p_delta: float) -> void:
@@ -109,6 +117,8 @@ func _physics_process(_p_delta: float) -> void:
 		facing = facingFromVector(input_direction)
 		var vision_poly = get_node("Polygon2D")
 		rotation_degrees = (facingToRotDeg(facing))
+		var goalLabel = get_node("goalLabel")
+		#goalLabel.rotation_degrees = -(facingToRotDeg(facing))
 		# Convert global position into a tile coordinate.
 		# We don't assume we are already snapped to the tile grid.
 		var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
@@ -154,6 +164,13 @@ func _input_direction_to_map_direction(p_input_direction: Vector2) -> Vector2i:
 		# Up/down are held or analog stick is *more* up/down than left/right.
 		return Vector2(0, roundf(p_input_direction.y))
 
+func set_state(s):
+	if state == STATES.PLAYING:
+		state = s
+		if s == STATES.WON:
+			get_node(^"../goalLabel").text = "You\nWin!"
+		elif s == STATES.LOST:
+			get_node(^"../goalLabel").text = "You\nLost!"
 
 ## Can we enter a given tile coordinate?
 ## Our character has a collider and moves using the physics system so that it interacts properly
@@ -168,7 +185,8 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		return false
 	if tile_data.get_custom_data("isGoal"):
 		# TODO Something Reasonable
-		get_node("goalLabel").text = "You\nWin!"
+		#get_node("goalLabel").text = "You\nWin!"
+		set_state(STATES.WON)
 	return tile_data.get_collision_polygons_count(0) < 1
 
 func _input(event):

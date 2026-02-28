@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://cmqeqh5q6wjho" path="res://tiles.png" id="1_1mjvg"]
 [ext_resource type="PackedScene" uid="uid://dq6m4s6rb3x80" path="res://character.tscn" id="2_3m31f"]
-[ext_resource type="Texture2D" uid="uid://3rsis153tqt4" path="res://assets/wallatlas.png" id="2_5vw27"]
+[ext_resource type="Texture2D" uid="uid://bua8uv7flfx30" path="res://assets/wallatlas.png" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://edo6bdmfqkxg" path="res://mouse.tscn" id="3_h2yge"]
-[ext_resource type="Texture2D" uid="uid://ctd1quis0yv5j" path="res://assets/mazetile.png" id="3_kek77"]
+[ext_resource type="Texture2D" uid="uid://bnugnm42thwb3" path="res://assets/mazetile.png" id="3_kek77"]
 [ext_resource type="Script" uid="uid://bw8cioamlxp3g" path="res://mob.gd" id="4_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://dx8pjo8ydf10c" path="res://assets/start.png" id="4_4c57u"]
-[ext_resource type="Texture2D" uid="uid://umamuxyst7ph" path="res://assets/goal.png" id="5_efxa6"]
-[ext_resource type="Texture2D" uid="uid://bl8a8fwtwq5bp" path="res://assets/walls/walldestroyed.png" id="6_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dwmmv81x0r4c6" path="res://assets/start.png" id="4_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bsxg3oe48vxc6" path="res://assets/goal.png" id="5_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cpf1mda7ovcrn" path="res://assets/walls/walldestroyed.png" id="6_4c57u"]
 [ext_resource type="Script" uid="uid://cbjaqq57fql7a" path="res://tile_map.gd" id="6_kek77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4vbl"]
@@ -597,6 +597,10 @@ sources/3 = SubResource("TileSetAtlasSource_w48qg")
 sources/4 = SubResource("TileSetAtlasSource_vivmo")
 sources/5 = SubResource("TileSetAtlasSource_efxa6")
 
+[sub_resource type="LabelSettings" id="LabelSettings_4c57u"]
+font_size = 80
+font_color = Color(0.19775072, 0.43107134, 0.102956004, 1)
+
 [node name="main" type="Node2D" unique_id=1689015029]
 
 [node name="tile_map" type="TileMap" parent="." unique_id=1665508455]
@@ -607,12 +611,21 @@ script = ExtResource("6_kek77")
 
 [node name="character" parent="." unique_id=605842106 node_paths=PackedStringArray("tile_map") instance=ExtResource("2_3m31f")]
 position = Vector2(14, 306)
+collision_layer = 2
+collision_mask = 2
 tile_map = NodePath("../tile_map")
 tiles_per_second = 5.0
 
 [node name="mouse" parent="." unique_id=1103297182 node_paths=PackedStringArray("tile_map") instance=ExtResource("3_h2yge")]
-position = Vector2(18, 243)
+position = Vector2(20, 245)
 script = ExtResource("4_1bvp3")
 tile_map = NodePath("../tile_map")
 
 [node name="Timer" type="Timer" parent="." unique_id=99995754]
+
+[node name="goalLabel" type="Label" parent="." unique_id=2073888049]
+offset_left = 47.0
+offset_top = 50.0
+offset_right = 352.0
+offset_bottom = 212.0
+label_settings = SubResource("LabelSettings_4c57u")
