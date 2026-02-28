@@ -7,6 +7,7 @@ var sprites = []
 const tileSize = Vector2i(32,32)
 var tileText = load("res://assets/mazetile.png")
 var wallText = load("res://assets/walls/wall0.png")
+var rng = RandomNumberGenerator.new()
 
 enum Tile {WALL, FLOOR, MOUSE, PLAYER}
 
@@ -17,7 +18,10 @@ func _ready():
 func initBoard():
 	for y in range(0,height):
 		for x in range(0,height):
-			board.append(Tile.FLOOR)
+			if (rng.randi_range(0,1) == 0):
+				board.append(Tile.FLOOR)
+			else:
+				board.append(Tile.WALL)
 			
 func getIndex(x, y):
 	return y * width + x
