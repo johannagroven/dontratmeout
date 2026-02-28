@@ -633,3 +633,6 @@ label_settings = SubResource("LabelSettings_4c57u")
 
 [node name="WallBreak" parent="." instance=ExtResource("11_efxa6")]
 position = Vector2(88, 493)
+
+[node name="BuildWall" parent="." instance=ExtResource("11_efxa6")]
+position = Vector2(245, 495)
