@@ -87,6 +87,10 @@ func facingToRotDeg(f):
 		FACINGS.RIGHT:
 			return 0
 
+func get_movement():
+	var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	return input_direction
+
 func _physics_process(_p_delta: float) -> void:
 	if not tile_map:
 		return
@@ -94,7 +98,7 @@ func _physics_process(_p_delta: float) -> void:
 	if _move_remaining_ticks == 0:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		var input_direction: Vector2 = get_movement()
 		facing = facingFromVector(input_direction)
 		var vision_poly = get_node("Polygon2D")
 		rotation_degrees = (facingToRotDeg(facing))
