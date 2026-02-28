@@ -1,4 +1,4 @@
-class_name Mob extends CharacterBody2D
+class_name MovingCharacter extends CharacterBody2D
 ## Snaps to a tile map grid and moves according to player input.
 
 enum FACINGS {
@@ -92,11 +92,8 @@ func facingToRotDeg(f):
 		FACINGS.RIGHT:
 			return 0
 
-
 func get_movement():
-	var rng = RandomNumberGenerator.new()
-	var directions = [Vector2(-1,0), Vector2(1,0), Vector2(0,-1), Vector2(0,1)]
-	var input_direction: Vector2 = directions[rng.randi_range(0,3)]
+	var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	return input_direction
 
 func _physics_process(_p_delta: float) -> void:

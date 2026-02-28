@@ -1,4 +1,4 @@
-class_name PlayerCharacter2D extends CharacterBody2D
+class_name chracter extends CharacterBody2D
 ## Snaps to a tile map grid and moves according to player input.
 
 enum FACINGS {
@@ -34,6 +34,9 @@ var _move_remaining_ticks: int = 0
 var _physics_ticks_per_move: int = 0
 # Calculated from tiles_per_second.
 var _physics_velocity_fraction: float = 0.0
+
+#Saves last inputed direction
+var _last_input_direction: Vector2 = Vector2.ZERO
 
 ## Node to interpolate between physics ticks.
 ## Sprites, cameras, effects, etc., should be children of this node.
@@ -101,6 +104,7 @@ func _physics_process(_p_delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_direction: Vector2 = get_movement()
+		_last_input_direction = input_direction
 		facing = facingFromVector(input_direction)
 		var vision_poly = get_node("Polygon2D")
 		rotation_degrees = (facingToRotDeg(facing))
@@ -165,3 +169,15 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		# TODO Something Reasonable
 		get_node("goalLabel").text = "You\nWin!"
 	return tile_data.get_collision_polygons_count(0) < 1
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_3:
+			var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
+			var map_position: Vector2i = tile_map.local_to_map(position_relative_to_tile_map)
+
+			var map_direction: Vector2i = _input_direction_to_map_direction(_last_input_direction)
+			var next_map_position: Vector2i = map_position + map_direction
+			if not _is_walkable(next_map_position):
+				tile_map.set_cell(0,next_map_position,5,Vector2i(0,0))
+			
