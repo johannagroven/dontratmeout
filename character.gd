@@ -73,8 +73,10 @@ func facingFromVector(v2):
 		return FACINGS.RIGHT
 	elif v2.y > 0:
 		return FACINGS.DOWN
-	else:
+	elif v2.y < 0:
 		return FACINGS.UP
+	else:
+		return facing
 		
 func facingToRotDeg(f):
 	match f:
