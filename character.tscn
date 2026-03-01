@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq6m4s6rb3x80"]
+[gd_scene format=3 uid="uid://dq6m4s6rb3x80"]
 
 [ext_resource type="Script" uid="uid://c3v634grxau4p" path="res://character.gd" id="1_5sc8v"]
-[ext_resource type="Texture2D" uid="uid://c6hnraa2v8rsc" path="res://assets/computer mouse-Sheet.png" id="2_pjt0s"]
+[ext_resource type="Texture2D" uid="uid://ca6qxgjhqdmw5" path="res://assets/computer mouse-Sheet.png" id="2_pjt0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa5vi"]
 atlas = ExtResource("2_pjt0s")
@@ -60,28 +60,23 @@ size = Vector2(14, 14)
 font_size = 50
 font_color = Color(0.109804, 0.784314, 0, 1)
 
-[node name="character" type="CharacterBody2D"]
+[node name="character" type="CharacterBody2D" unique_id=116066374]
 position = Vector2(0, -1)
 motion_mode = 1
 script = ExtResource("1_5sc8v")
 tiles_per_second = 10.0
 
-[node name="visuals" type="Node2D" parent="."]
+[node name="visuals" type="Node2D" parent="." unique_id=351966041]
 
-[node name="camera" type="Camera2D" parent="visuals"]
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-editor_draw_drag_margin = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visuals"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visuals" unique_id=90681643]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_qi5as")
 autoplay = "default"
 
-[node name="shape" type="CollisionShape2D" parent="."]
+[node name="shape" type="CollisionShape2D" parent="." unique_id=553361698]
 shape = SubResource("RectangleShape2D_ujape")
 
-[node name="goalLabel" type="Label" parent="."]
+[node name="goalLabel" type="Label" parent="." unique_id=1873827994]
 offset_left = -67.0
 offset_top = -49.0
 offset_right = 69.0

@@ -23,3 +23,8 @@ config/icon="res://icon.svg"
 
 Music="*uid://ckk5rs1l4m8eh"
 Globals="*uid://c03adbrs2h22i"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"

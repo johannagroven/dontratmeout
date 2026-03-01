@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://edo6bdmfqkxg"]
+[gd_scene format=3 uid="uid://edo6bdmfqkxg"]
 
 [ext_resource type="Script" uid="uid://c3v634grxau4p" path="res://character.gd" id="1_tewyd"]
-[ext_resource type="Texture2D" uid="uid://d3juvq1aookcj" path="res://assets/normal mouse-Sheet.png" id="2_tewyd"]
+[ext_resource type="Texture2D" uid="uid://d3gjyhoksbmmb" path="res://assets/normal mouse-Sheet.png" id="2_tewyd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jbr0"]
 atlas = ExtResource("2_tewyd")
@@ -42,27 +42,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujape"]
 size = Vector2(14, 14)
 
-[node name="character" type="CharacterBody2D"]
+[node name="character" type="CharacterBody2D" unique_id=324845111]
 position = Vector2(0, -1)
 motion_mode = 1
 script = ExtResource("1_tewyd")
 tiles_per_second = 10.0
 
-[node name="visuals" type="Node2D" parent="."]
+[node name="visuals" type="Node2D" parent="." unique_id=730733594]
 
-[node name="camera" type="Camera2D" parent="visuals"]
-zoom = Vector2(4, 4)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-editor_draw_drag_margin = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visuals"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visuals" unique_id=2056139798]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_qi5as")
 autoplay = "default"
 
-[node name="shape" type="CollisionShape2D" parent="."]
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1851426296]
 shape = SubResource("RectangleShape2D_ujape")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1438272949]
 polygon = PackedVector2Array(0, 0, 31, -18, 31, 19)

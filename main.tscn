@@ -1118,11 +1118,17 @@ offset_bottom = 212.0
 label_settings = SubResource("LabelSettings_4c57u")
 
 [node name="WallBreak" parent="." unique_id=310868609 instance=ExtResource("11_efxa6")]
-position = Vector2(88, 493)
+position = Vector2(120, 493)
 
 [node name="BuildWall" parent="." unique_id=616023767 instance=ExtResource("11_efxa6")]
-position = Vector2(245, 495)
+position = Vector2(280, 495)
 
 [node name="PosStart" parent="." unique_id=763993388 instance=ExtResource("12_dg77c")]
 position = Vector2(-100, 172)
 rotation = 1.5708
+
+[node name="camera" type="Camera2D" parent="." unique_id=94882063]
+position = Vector2(200, 250)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
