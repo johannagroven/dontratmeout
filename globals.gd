@@ -2,7 +2,7 @@ extends Node
 
 var current_Level = 0
 
-var level_Names = ["MainMenu","first","second","main","WinScreen"]
+var level_Names = ["MainMenu","first","second","third","fourth","main","WinScreen"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
