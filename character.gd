@@ -121,7 +121,12 @@ func _physics_process(_p_delta: float) -> void:
 		
 	if state != STATES.PLAYING:
 		if timer <= 0.0:
-			get_tree().change_scene_to_file("res://MainMenu.tscn")
+			if state == STATES.WON:
+				Globals.current_Level+=1
+			if state == STATES.LOST:
+				Globals.current_Level=0
+			var leveltoload = "res://" + Globals.level_Names[Globals.current_Level] + ".tscn"
+			get_tree().change_scene_to_file(leveltoload)
 		else:
 			timer -= 1.0
 	var scientistpolygon = get_node("../PosStart").polygon

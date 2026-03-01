@@ -49,7 +49,9 @@ func _input(event):
 			updateState(false)
 		if event.keycode == KEY_ENTER:
 			if STATES[cur_state] == "NEW_GAME":
-				get_tree().change_scene_to_file("res://main.tscn")
+				Globals.current_Level = 1
+				var leveltoload = "res://" + Globals.level_Names[Globals.current_Level] + ".tscn"
+				get_tree().change_scene_to_file(leveltoload)
 			if STATES[cur_state] == "LEVEL_SELECT":
 				#TODO: CHANGE ONCE IMPLEMENTED
 				pass
