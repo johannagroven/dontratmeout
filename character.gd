@@ -16,6 +16,7 @@ enum STATES {
 
 var facing = FACINGS.UP
 var state = STATES.PLAYING
+var watched = false
 ## Set to the tile map you want to walk in.
 @export var tile_map: TileMap = null
 
@@ -128,7 +129,9 @@ func _physics_process(_p_delta: float) -> void:
 			get_tree().change_scene_to_file(leveltoload)
 		else:
 			timer -= 1.0
-
+	var scientistpolygon = get_node("../PosStart").polygon
+	#var scientistpolygon = scientistspolygon.polygon
+	watched = Geometry2D.is_point_in_polygon(global_position,scientistpolygon)
 	if _move_remaining_ticks == 0:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
@@ -219,7 +222,9 @@ func _input(event):
 		return
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_3: # Tear down wall
-			if wallAbility.use():
+			if watched:
+				set_state(STATES.LOST)
+			elif wallAbility.use():
 				var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
 				var map_position: Vector2i = tile_map.local_to_map(position_relative_to_tile_map)
 
@@ -231,7 +236,9 @@ func _input(event):
 					tile_map.populateAstarGrid()
 					get_node("/root/main/mouse").setPath()
 		if event.keycode == KEY_4:
-			if buildAbility.use():
+			if watched:
+				set_state(STATES.LOST)
+			elif buildAbility.use():
 				var position_relative_to_tile_map: Vector2 = tile_map.to_local(global_position)
 				var map_position: Vector2i = tile_map.local_to_map(position_relative_to_tile_map)
 
