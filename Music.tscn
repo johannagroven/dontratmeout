@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ckk5rs1l4m8eh"]
+
+[ext_resource type="AudioStream" uid="uid://d2ldyel3pekdc" path="res://assets/audio/rat funk.mp3" id="1_fw6bl"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1997286221]
+stream = ExtResource("1_fw6bl")
+autoplay = true

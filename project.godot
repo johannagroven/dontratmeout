@@ -18,3 +18,7 @@ config/name="grid_movement"
 run/main_scene="uid://cnk363p8ja37x"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Music="*uid://ckk5rs1l4m8eh"
