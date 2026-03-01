@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Music="*uid://ckk5rs1l4m8eh"
-Globals="*uid://c03adbrs2h22i"
+Globals="*uid://ntcn7dlvo2wc"
 
 [display]
 
