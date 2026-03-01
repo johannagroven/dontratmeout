@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cnk363p8ja37x"]
+
+[ext_resource type="Script" uid="uid://b42gl0rcrkjkf" path="res://main_menu.gd" id="1_i26rj"]
+
+[node name="Control" type="Control" unique_id=827862977]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i26rj")
+
+[node name="NewGame" type="Label" parent="." unique_id=208510010]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 330.0
+offset_right = 950.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 44
+text = "New Game"
+
+[node name="LevelSelect" type="Label" parent="." unique_id=896782096]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 430.0
+offset_right = 950.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 44
+text = "Level Select"

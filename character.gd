@@ -44,6 +44,9 @@ var _physics_velocity_fraction: float = 0.0
 #Saves last inputed direction
 var _last_input_direction: Vector2 = Vector2.ZERO
 
+#Timer for Game Over
+var timer: float = 50
+
 ## Node to interpolate between physics ticks.
 ## Sprites, cameras, effects, etc., should be children of this node.
 ## Without interpolation, any visuals attached to the character directly would appear to jitter when
@@ -114,6 +117,12 @@ func get_movement():
 func _physics_process(_p_delta: float) -> void:
 	if not tile_map:
 		return
+		
+	if state != STATES.PLAYING:
+		if timer <= 0.0:
+			get_tree().change_scene_to_file("res://MainMenu.tscn")
+		else:
+			timer -= 1.0
 
 	if _move_remaining_ticks == 0:
 		# Get the input direction and handle the movement/deceleration.

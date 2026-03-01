@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://clisjik3djfm4"]
+[gd_scene format=3 uid="uid://clisjik3djfm4"]
 
 [ext_resource type="Script" uid="uid://ccmkiima2j7jc" path="res://scientist.gd" id="1_3li26"]
 [ext_resource type="Texture2D" uid="uid://xnkr6loem1cu" path="res://icon.svg" id="2_n3xpj"]
