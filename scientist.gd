@@ -16,10 +16,14 @@ var startPos
 var endPos
 var facing = FACINGS.UP
 var direction = DIRECTION.TO_START
+var polygonOrig
+var polygon
 
 func _ready() -> void:
 	startPos = global_position
 	endPos = get_node("PosEnd").global_position
+	polygonOrig = get_node("Polygon2D").polygon.duplicate()
+	polygon = polygonOrig.duplicate()
 
 func facingFromVector(v2):
 	if v2.x < 0:
@@ -54,6 +58,13 @@ func update():
 	delta = target - global_position
 	delta = delta.normalized()
 	global_position += delta
+	#print(polygon)
+	
+	var newpoly = PackedVector2Array([Vector2(0,0),Vector2(0,0),Vector2(0,0)])
+	for i in polygonOrig.size():
+		newpoly.set(i,polygonOrig.duplicate()[i].rotated(rotation)+global_position)
+	polygon = newpoly
+	#print(rotation)
 	facing = facingFromVector(delta)
 	rotation_degrees = facingToRotDeg(facing)
 	var x_delt_start = global_position.x - startPos.x
