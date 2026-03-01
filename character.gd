@@ -60,15 +60,17 @@ func _init() -> void:
 	# Reset to correct motion mode. (in case script is applied without setting motion mode)
 	motion_mode = MOTION_MODE_FLOATING
 
+var soundPlayer
+
 
 func _ready() -> void:
 	# Initialize interpolate-from position as starting position rather than zero.
 	_previous_position = global_position
 	wallAbility = get_node("../WallBreak")
 	buildAbility = get_node("../BuildWall")
-	
 	wallAbility.changeCard(3)
 	buildAbility.changeCard(4)
+	soundPlayer = get_node("AudioStreamPlayer2D")
 	
 
 	# Convert desired movement speed into a discrete number of physics ticks per cell traveled.
@@ -219,6 +221,9 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		tile_map.set_cell(0,p_map_position,11,Vector2i(1,0))
 		tile_map.disableRed()
 		tile_map.populateAstarGrid()
+		var soundEffect = load("res://assets/audio/button.mp3")
+		soundPlayer.stream = soundEffect
+		soundPlayer.play()
 	return tile_data.get_collision_polygons_count(0) < 1
 
 func _input(event):
@@ -238,6 +243,9 @@ func _input(event):
 				if tile.get_custom_data("is_breakable"):
 					tile_map.set_cell(0,next_map_position,5,Vector2i(0,0))
 					tile_map.populateAstarGrid()
+				var soundEffect = load("res://assets/audio/wallbreak.mp3")
+				soundPlayer.stream = soundEffect
+				soundPlayer.play()
 		if event.keycode == KEY_4:
 			if watched:
 				set_state(STATES.LOST)

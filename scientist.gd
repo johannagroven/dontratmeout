@@ -52,7 +52,6 @@ func facingToRotDeg(f):
 			
 func update():
 	timer -=1
-	print(timer)
 	if timer < 0:
 		timer = turntime
 		if facing==FACINGS.RIGHT:

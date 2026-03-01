@@ -49,11 +49,12 @@ func _init() -> void:
 	# Reset to correct motion mode. (in case script is applied without setting motion mode)
 	motion_mode = MOTION_MODE_FLOATING
 
+var soundPlayer
 
 func _ready() -> void:
 	# Initialize interpolate-from position as starting position rather than zero.
 	_previous_position = global_position
-
+	soundPlayer = get_node("AudioStreamPlayer2D")
 	# Convert desired movement speed into a discrete number of physics ticks per cell traveled.
 	# For example, if physics_ticks_per_second is 60 (default) and tiles_per_second is 6,
 	# we will spread the move between cells across 10 physics ticks.
@@ -186,6 +187,10 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		tile_map.disableRed()
 		tile_map.populateAstarGrid()
 		get_node("/root/main/mouse").setPath()
+		var soundEffect = load("res://assets/audio/button.mp3")
+		soundPlayer.stream = soundEffect
+		soundPlayer.play()
+		
 	return tile_data.get_collision_polygons_count(0) < 1
 
 func follow_path():

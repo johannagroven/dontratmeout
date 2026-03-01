@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq6m4s6rb3x80"]
 
 [ext_resource type="Script" uid="uid://c3v634grxau4p" path="res://character.gd" id="1_5sc8v"]
-[ext_resource type="Texture2D" uid="uid://ca6qxgjhqdmw5" path="res://assets/computer mouse-Sheet.png" id="2_pjt0s"]
+[ext_resource type="Texture2D" uid="uid://blce58ipxrrna" path="res://assets/computer mouse-Sheet.png" id="2_pjt0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa5vi"]
 atlas = ExtResource("2_pjt0s")
@@ -83,3 +83,5 @@ offset_right = 69.0
 offset_bottom = 49.0
 theme_override_font_sizes/font_size = 80
 label_settings = SubResource("LabelSettings_pjt0s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=60477225]

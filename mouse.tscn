@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://edo6bdmfqkxg"]
 
 [ext_resource type="Script" uid="uid://c3v634grxau4p" path="res://character.gd" id="1_tewyd"]
-[ext_resource type="Texture2D" uid="uid://d3gjyhoksbmmb" path="res://assets/normal mouse-Sheet.png" id="2_tewyd"]
+[ext_resource type="Texture2D" uid="uid://c55u3o80calnj" path="res://assets/normal mouse-Sheet.png" id="2_tewyd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jbr0"]
 atlas = ExtResource("2_tewyd")
@@ -59,4 +59,7 @@ autoplay = "default"
 shape = SubResource("RectangleShape2D_ujape")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1438272949]
+visible = false
 polygon = PackedVector2Array(0, 0, 31, -18, 31, 19)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1211686115]
