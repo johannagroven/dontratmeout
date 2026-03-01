@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dmxcnsxmuy1ny"]
+
+[ext_resource type="Script" uid="uid://bk1o3l7eqh7wx" path="res://level_select.gd" id="1_il3u1"]
+
+[node name="LevelSelect" type="Control" unique_id=1883403128]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_il3u1")
+
+[node name="Label" type="Label" parent="." unique_id=1822760092]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 101.0
+offset_right = 721.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 50
+text = "Select Level"
+
+[node name="LevelLabel" type="Label" parent="." unique_id=176195648]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 195.0
+offset_right = 779.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 44
+text = "< 1 > [Enter]"
+
+[node name="ReturnLabel" type="Label" parent="." unique_id=22026193]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 428.0
+offset_right = 815.0
+offset_bottom = 489.0
+theme_override_font_sizes/font_size = 44
+text = "Return to Main Menu"

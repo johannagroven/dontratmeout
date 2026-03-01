@@ -53,5 +53,4 @@ func _input(event):
 				var leveltoload = "res://" + Globals.level_Names[Globals.current_Level] + ".tscn"
 				get_tree().change_scene_to_file(leveltoload)
 			if STATES[cur_state] == "LEVEL_SELECT":
-				#TODO: CHANGE ONCE IMPLEMENTED
-				pass
+				get_tree().change_scene_to_file("res://level_select.tscn")
