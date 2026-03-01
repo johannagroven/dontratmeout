@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://clisjik3djfm4"]
 
 [ext_resource type="Script" uid="uid://ccmkiima2j7jc" path="res://scientist.gd" id="1_3li26"]
-[ext_resource type="Texture2D" uid="uid://belcty5hpqacd" path="res://icon.svg" id="2_n3xpj"]
+[ext_resource type="Texture2D" uid="uid://jrmcc6qhmrvo" path="res://assets/scientist.png" id="2_3li26"]
 
 [node name="PosStart" type="Node2D" unique_id=1936971122]
 script = ExtResource("1_3li26")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1779613211]
-texture = ExtResource("2_n3xpj")
+rotation = -1.5707964
+texture = ExtResource("2_3li26")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1908568036]
 color = Color(1, 1, 1, 0.133333)

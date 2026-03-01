@@ -1125,7 +1125,7 @@ position = Vector2(280, 495)
 
 [node name="PosStart" parent="." unique_id=763993388 instance=ExtResource("12_dg77c")]
 position = Vector2(-100, 172)
-rotation = 1.5708
+rotation = 1.5707964
 
 [node name="camera" type="Camera2D" parent="." unique_id=94882063]
 position = Vector2(200, 250)
