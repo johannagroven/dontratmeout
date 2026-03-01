@@ -18,6 +18,16 @@ func populateAstarGrid():
 			nav.set_point_solid(cell)
 		if tile_data.get_custom_data("isGoal"):
 			goals.append(cell)	
+			
+func disableRed():
+	var layer = -1
+	for cell in get_used_cells(layer):
+		var tile_data = get_cell_tile_data(layer,cell)
+		if tile_data.get_custom_data("is_RedDoor"):
+			set_cell(layer, cell, 11, Vector2i(2,0))
+		elif (get_cell_source_id(layer,cell) == 11 and get_cell_atlas_coords(layer,cell) == Vector2i(2,0)):
+			set_cell(layer, cell, 11, Vector2i(3,0))
+	
 	
 func _ready() -> void:
 	populateAstarGrid()

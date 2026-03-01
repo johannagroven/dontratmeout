@@ -181,6 +181,11 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		#get_node(^"../character/goalLabel").text = "You\nLost!"
 		var player = get_node(^"../character")
 		player.set_state(player.STATES.LOST)
+	if tile_data.get_custom_data("is_RedButton"):
+		tile_map.set_cell(0,p_map_position,11,Vector2i(1,0))
+		tile_map.disableRed()
+		tile_map.populateAstarGrid()
+		get_node("/root/main/mouse").setPath()
 	return tile_data.get_collision_polygons_count(0) < 1
 
 func follow_path():
