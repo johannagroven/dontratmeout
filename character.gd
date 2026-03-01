@@ -219,7 +219,6 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		tile_map.set_cell(0,p_map_position,11,Vector2i(1,0))
 		tile_map.disableRed()
 		tile_map.populateAstarGrid()
-		get_node("/root/main/mouse").setPath()
 	return tile_data.get_collision_polygons_count(0) < 1
 
 func _input(event):
@@ -239,7 +238,6 @@ func _input(event):
 				if tile.get_custom_data("is_breakable"):
 					tile_map.set_cell(0,next_map_position,5,Vector2i(0,0))
 					tile_map.populateAstarGrid()
-					get_node("/root/main/mouse").setPath()
 		if event.keycode == KEY_4:
 			if watched:
 				set_state(STATES.LOST)
@@ -253,5 +251,4 @@ func _input(event):
 				if tile.get_custom_data("is_buildableOn"):
 					tile_map.set_cell(0,next_map_position,1,Vector2i(2,2))
 					tile_map.populateAstarGrid()
-					get_node("/root/main/mouse").setPath()
 					
