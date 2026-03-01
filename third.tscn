@@ -1,23 +1,23 @@
-[gd_scene format=3 uid="uid://da0hykmchsjn0"]
+[gd_scene format=3 uid="uid://dqm8lt4c4434v"]
 
-[ext_resource type="Texture2D" uid="uid://cmqeqh5q6wjho" path="res://tiles.png" id="1_1anqs"]
-[ext_resource type="Texture2D" uid="uid://3rsis153tqt4" path="res://assets/wallatlas.png" id="2_gxo0n"]
-[ext_resource type="Texture2D" uid="uid://ro0rxypwyo6v" path="res://assets/reddooratlas.png" id="3_h2bvj"]
-[ext_resource type="Texture2D" uid="uid://ctd1quis0yv5j" path="res://assets/mazetile.png" id="4_m7txm"]
-[ext_resource type="Texture2D" uid="uid://dx8pjo8ydf10c" path="res://assets/start.png" id="5_ahup6"]
-[ext_resource type="Texture2D" uid="uid://umamuxyst7ph" path="res://assets/goal.png" id="6_f0vwk"]
-[ext_resource type="Texture2D" uid="uid://bl8a8fwtwq5bp" path="res://assets/walls/walldestroyed.png" id="7_7bvcy"]
-[ext_resource type="Texture2D" uid="uid://dxqslsbkegxn4" path="res://assets/undestructablewallatlas.png" id="8_swivs"]
-[ext_resource type="Script" uid="uid://cbjaqq57fql7a" path="res://tile_map.gd" id="9_cq3jk"]
-[ext_resource type="PackedScene" uid="uid://dq6m4s6rb3x80" path="res://character.tscn" id="10_4pebd"]
-[ext_resource type="PackedScene" uid="uid://edo6bdmfqkxg" path="res://mouse.tscn" id="11_ew34d"]
-[ext_resource type="Script" uid="uid://bw8cioamlxp3g" path="res://mob.gd" id="12_3c4nw"]
-[ext_resource type="PackedScene" uid="uid://3y8usxyunu7" path="res://timed_ability.tscn" id="13_6ntrt"]
-[ext_resource type="PackedScene" uid="uid://clisjik3djfm4" path="res://scientist.tscn" id="14_g1f3j"]
+[ext_resource type="Texture2D" uid="uid://cmqeqh5q6wjho" path="res://tiles.png" id="1_hj6ce"]
+[ext_resource type="Texture2D" uid="uid://3rsis153tqt4" path="res://assets/wallatlas.png" id="2_21gf3"]
+[ext_resource type="Texture2D" uid="uid://ro0rxypwyo6v" path="res://assets/reddooratlas.png" id="3_qjna1"]
+[ext_resource type="Texture2D" uid="uid://ctd1quis0yv5j" path="res://assets/mazetile.png" id="4_4n4o4"]
+[ext_resource type="Texture2D" uid="uid://dx8pjo8ydf10c" path="res://assets/start.png" id="5_jcq5n"]
+[ext_resource type="Texture2D" uid="uid://umamuxyst7ph" path="res://assets/goal.png" id="6_v1jmj"]
+[ext_resource type="Texture2D" uid="uid://bl8a8fwtwq5bp" path="res://assets/walls/walldestroyed.png" id="7_olwj8"]
+[ext_resource type="Texture2D" uid="uid://dxqslsbkegxn4" path="res://assets/undestructablewallatlas.png" id="8_x64y5"]
+[ext_resource type="Script" uid="uid://cbjaqq57fql7a" path="res://tile_map.gd" id="9_hm24l"]
+[ext_resource type="PackedScene" uid="uid://dq6m4s6rb3x80" path="res://character.tscn" id="10_hpjwr"]
+[ext_resource type="PackedScene" uid="uid://edo6bdmfqkxg" path="res://mouse.tscn" id="11_8y0lf"]
+[ext_resource type="Script" uid="uid://bw8cioamlxp3g" path="res://mob.gd" id="12_qw7m1"]
+[ext_resource type="PackedScene" uid="uid://3y8usxyunu7" path="res://timed_ability.tscn" id="13_opg77"]
+[ext_resource type="PackedScene" uid="uid://clisjik3djfm4" path="res://scientist.tscn" id="14_slybk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4vbl"]
 resource_name = "atlas"
-texture = ExtResource("1_1anqs")
+texture = ExtResource("1_hj6ce")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -25,7 +25,7 @@ texture = ExtResource("1_1anqs")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg77c"]
 resource_name = "Walls"
-texture = ExtResource("2_gxo0n")
+texture = ExtResource("2_21gf3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -618,7 +618,7 @@ texture_region_size = Vector2i(32, 32)
 5:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yaehf"]
-texture = ExtResource("3_h2bvj")
+texture = ExtResource("3_qjna1")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/custom_data_0 = true
@@ -633,34 +633,34 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycdy4"]
 resource_name = "Floors"
-texture = ExtResource("4_m7txm")
+texture = ExtResource("4_4n4o4")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/custom_data_3 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w48qg"]
 resource_name = "Start"
-texture = ExtResource("5_ahup6")
+texture = ExtResource("5_jcq5n")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/custom_data_0 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vivmo"]
 resource_name = "Goal"
-texture = ExtResource("6_f0vwk")
+texture = ExtResource("6_v1jmj")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/custom_data_0 = true
 0:0/0/custom_data_1 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efxa6"]
-texture = ExtResource("7_7bvcy")
+texture = ExtResource("7_olwj8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/custom_data_0 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cqfq"]
-texture = ExtResource("8_swivs")
+texture = ExtResource("8_x64y5")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -1118,24 +1118,24 @@ tile_proxies/coords_level = [[7, Vector2i(0, 0)], [11, Vector2i(0, 0)], [8, Vect
 font_size = 80
 font_color = Color(0.197751, 0.431071, 0.102956, 1)
 
-[node name="Second" type="Node2D" unique_id=46131350]
+[node name="Third" type="Node2D" unique_id=46131350]
 
 [node name="tile_map" type="TileMap" parent="." unique_id=381912052]
 tile_set = SubResource("TileSet_27pgi")
 format = 2
-layer_0/tile_data = PackedInt32Array(4, 2, 0, 589828, 3, 0, 589827, 720902, 1, 524291, 720902, 1, 524292, 2, 0, 65540, 2, 0, 131076, 2, 0, 196612, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 458755, 720902, 1, 393219, 720902, 1, 327683, 720902, 1, 262147, 720902, 1, 196611, 720902, 1, 131075, 720902, 1, 65539, 65542, 2, -65532, 786438, 1, -65533, 786438, 1, 655363, 131078, 0, 655364, 786438, 1, 262148, 2, 0, 589833, 720902, 1, 655369, 458758, 1, 524297, 720902, 1, 458761, 720902, 1, 458760, 2, 0, 393224, 2, 0, 327688, 2, 0, 262152, 2, 0, 196617, 720902, 1, 131081, 720902, 1, 65545, 720902, 1, 9, 720902, 1, 262153, 720902, 1, 327689, 720902, 1, 393225, 720902, 1, 65544, 2, 0, 8, 2, 0, -65529, 786438, 1, -65528, 786438, 1, 131080, 2, 0, 196616, 2, 0, 524296, 2, 0, 655368, 786438, 1, 655367, 131078, 0, 589831, 720902, 1, 589830, 2, 0, 524294, 2, 0, 524295, 720902, 1, 458759, 720902, 1, 393223, 720902, 1, 327687, 720902, 1, 262151, 720902, 1, 196615, 720902, 1, 131079, 720902, 1, 65543, 65542, 2, -65530, 786438, 1, 6, 2, 0, 65542, 2, 0, 131078, 2, 0, 196614, 2, 0, 262150, 2, 0, 327686, 2, 0, 393222, 2, 0, 458758, 2, 0, 655366, 786438, 1, 655365, 786438, 1, 589829, 2, 0, 524293, 851974, 1, 458757, 720902, 1, 393221, 720902, 1, 327685, 720902, 1, 262149, 720902, 1, 196613, 720902, 1, 131077, 720902, 1, 65541, 720902, 1, 5, 720902, 1, -65531, 327686, 0, -65534, 786438, 1, -65535, 655366, 1, 1, 720902, 1, 65537, 720902, 1, 131073, 720902, 1, 196609, 720902, 1, 262145, 720902, 1, 327681, 720902, 1, 393217, 720902, 1, 458753, 720902, 1, 524289, 720902, 1, 589825, 720902, 1, 655361, 524294, 1, 655362, 786438, 1, 589826, 2, 0, 524290, 2, 0, 458754, 2, 0, 393218, 2, 0, 327682, 2, 0, 262146, 2, 0, 196610, 2, 0, 131074, 2, 0, 65538, 2, 0, 2, 2, 0, 3, 2, 0, 7, 2, 0, 589832, 4, 0, -65527, 589830, 1)
-script = ExtResource("9_cq3jk")
+layer_0/tile_data = PackedInt32Array(4, 786438, 1, 524291, 786438, 1, 524292, 786438, 1, 65540, 2, 0, 131076, 2, 0, 196612, 2, 0, 327684, 2, 0, 393220, 786438, 1, 458756, 131083, 0, 458755, 2, 0, 393219, 917510, 1, 262147, 786438, 1, 262148, 786438, 1, 655369, 720902, 3, 524297, 786438, 1, 458761, 2, 0, 458760, 131083, 0, 393224, 786438, 1, 262152, 786438, 1, 262153, 786438, 1, 393225, 6, 2, 524296, 786438, 1, 524294, 786438, 1, 524295, 786438, 1, 458759, 2, 0, 393223, 786438, 1, 262151, 786438, 1, 65543, 655366, 3, 262150, 786438, 1, 393222, 786438, 1, 458758, 11, 0, 524293, 786438, 1, 458757, 2, 0, 393221, 786438, 1, 262149, 131078, 0, 196613, 720902, 1, 131077, 720902, 1, 65541, 720902, 1, 5, 589830, 1, 1, 327686, 0, 262145, 196614, 0, 327681, 720902, 1, 393217, 851974, 1, 524289, 786438, 1, 524290, 786438, 1, 393218, 2, 0, 327682, 2, 0, 262146, 786438, 1, 196610, 2, 0, 131074, 2, 0, 65538, 2, 0, 2, 786438, 1, 3, 786438, 1, 458762, 4, 0, 524298, 786438, 1, 524299, 458758, 1, 458763, 720902, 1, 393227, 720902, 1, 327691, 720902, 1, 262155, 589830, 1, 262154, 786438, 1, 524288, 786438, 1, 589823, 524294, 1, 524287, 720902, 1, 458751, 720902, 1, 0, 786438, 1, 65535, 655366, 1, 131071, 720902, 1, 196607, 720902, 1, 262143, 720902, 1, 327679, 720902, 1, 393215, 720902, 1, 65537, 851974, 1, 196609, 65542, 2, 131073, 131073, 2, 65539, 2, 0, 131075, 2, 0, 196611, 2, 0, 65536, 2, 0, 131072, 2, 0, 196608, 2, 0, 262144, 2, 0, 327680, 2, 0, 393216, 2, 0, 458752, 3, 0, 458753, 2, 0, 458754, 2, 0, 327683, 2, 0, 327685, 2, 0, 327686, 196619, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 393226, 2, 0)
+script = ExtResource("9_hm24l")
 
-[node name="character" parent="." unique_id=1172200777 node_paths=PackedStringArray("tile_map") instance=ExtResource("10_4pebd")]
-position = Vector2(144, 305)
+[node name="character" parent="." unique_id=1172200777 node_paths=PackedStringArray("tile_map") instance=ExtResource("10_hpjwr")]
+position = Vector2(19, 241)
 collision_layer = 2
 collision_mask = 2
 tile_map = NodePath("../tile_map")
 tiles_per_second = 5.0
 
-[node name="mouse" parent="." unique_id=1618680553 node_paths=PackedStringArray("tile_map") instance=ExtResource("11_ew34d")]
-position = Vector2(80, 305)
-script = ExtResource("12_3c4nw")
+[node name="mouse" parent="." unique_id=1618680553 node_paths=PackedStringArray("tile_map") instance=ExtResource("11_8y0lf")]
+position = Vector2(108, 81)
+script = ExtResource("12_qw7m1")
 tile_map = NodePath("../tile_map")
 
 [node name="goalLabel" type="Label" parent="." unique_id=1327496284]
@@ -1145,13 +1145,13 @@ offset_right = 353.0
 offset_bottom = 212.0
 label_settings = SubResource("LabelSettings_4c57u")
 
-[node name="WallBreak" parent="." unique_id=310868609 instance=ExtResource("13_6ntrt")]
+[node name="WallBreak" parent="." unique_id=310868609 instance=ExtResource("13_opg77")]
 position = Vector2(120, 493)
 
-[node name="BuildWall" parent="." unique_id=616023767 instance=ExtResource("13_6ntrt")]
+[node name="BuildWall" parent="." unique_id=616023767 instance=ExtResource("13_opg77")]
 position = Vector2(280, 495)
 
-[node name="PosStart" parent="." unique_id=763993388 instance=ExtResource("14_g1f3j")]
+[node name="PosStart" parent="." unique_id=763993388 instance=ExtResource("14_slybk")]
 position = Vector2(-100, 172)
 rotation = 1.5707964
 

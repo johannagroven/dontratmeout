@@ -221,6 +221,9 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		tile_map.set_cell(0,p_map_position,11,Vector2i(1,0))
 		tile_map.disableRed()
 		tile_map.populateAstarGrid()
+		for child in get_parent().get_children():
+			if child.name == "mouse":
+				child.setPath()
 		var soundEffect = load("res://assets/audio/button.mp3")
 		soundPlayer.stream = soundEffect
 		soundPlayer.play()
@@ -243,6 +246,9 @@ func _input(event):
 				if tile.get_custom_data("is_breakable"):
 					tile_map.set_cell(0,next_map_position,5,Vector2i(0,0))
 					tile_map.populateAstarGrid()
+					for child in get_parent().get_children():
+						if child.name == "mouse":
+							child.setPath()
 				var soundEffect = load("res://assets/audio/wallbreak.mp3")
 				soundPlayer.stream = soundEffect
 				soundPlayer.play()
@@ -259,4 +265,7 @@ func _input(event):
 				if tile.get_custom_data("is_buildableOn"):
 					tile_map.set_cell(0,next_map_position,1,Vector2i(2,2))
 					tile_map.populateAstarGrid()
+					for child in get_parent().get_children():
+						if child.name == "mouse":
+							child.setPath()
 					

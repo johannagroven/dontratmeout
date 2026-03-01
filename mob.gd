@@ -186,7 +186,9 @@ func _is_walkable(p_map_position: Vector2i) -> bool:
 		tile_map.set_cell(0,p_map_position,11,Vector2i(1,0))
 		tile_map.disableRed()
 		tile_map.populateAstarGrid()
-		get_node("/root/main/mouse").setPath()
+		for child in get_parent().get_children():
+			if child.name == "mouse":
+				child.setPath()
 		var soundEffect = load("res://assets/audio/button.mp3")
 		soundPlayer.stream = soundEffect
 		soundPlayer.play()

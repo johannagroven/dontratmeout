@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cnk363p8ja37x"]
 
 [ext_resource type="Script" uid="uid://b42gl0rcrkjkf" path="res://main_menu.gd" id="1_i26rj"]
+[ext_resource type="Texture2D" uid="uid://drqnhll5467uh" path="res://assets/title.png" id="2_eiy7p"]
 
 [node name="Control" type="Control" unique_id=827862977]
 layout_mode = 3
@@ -28,3 +29,8 @@ offset_right = 950.0
 offset_bottom = 504.0
 theme_override_font_sizes/font_size = 44
 text = "Level Select"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1224104651]
+position = Vector2(580, 147)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_eiy7p")
